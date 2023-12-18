@@ -1,0 +1,78 @@
+body{
+    background: #FFFDA2;
+    font-family: 'Dela Gothic One', cursive;
+
+}
+
+h1 , h2{
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    color: #FF6363;
+}
+
+.heading{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+
+.addTasks{
+    display: grid;
+    grid-template-columns: 400px 500px;
+    grid-template-rows: 1fr;
+    gap: 5px;
+}
+
+
+/* Style the placeholder text */
+::placeholder {
+    color: #FF6363; /* Change the text color */
+    font-style: italic; /* Make the text italic */
+    font-size: 14px; /* Set the font size */
+    opacity: 0.7; /* Adjust the opacity */
+  }
+  
+  /* Style the placeholder text for a specific input with a class */
+.input-class::placeholder {
+    color: #555; /* Change the text color */
+    font-weight: bold; /* Make the text bold */
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskArea{
+    display:grid;
+    grid-template-columns: 250px;
+    grid-template-rows: auto;
+    background: white;
+    padding : 30px 60px;
+}
+
+.taskArea li{
+    list-style: none;
+}
+
+.bulletPoint{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+
+.bulletPoint button{
+    margin-left: 20px;
+}
+
+.taskAdd{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+

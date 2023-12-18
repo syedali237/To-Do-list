@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="heading">
+    <h1>ToDo List App</h1>
+    <h2>Tasks for <%= day %>,<%= dateOfDay%> <%= monthOfDate %> </h2>
+</section>
+
+
+<div class="container">  
+<div class="addTasks">
+    <div class="taskAdd">
+    <form action="/submit" method="POST">
+    <input  type="text" name= "tasks" placeholder="ENTER YOUR TASK" class="input-class">
+    <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+      </svg>  </button>   
+</form>
+</div>
+
+<div class="taskArea">
+    <% if (locals.task) {  %>
+    <% for (var i=0 ; i<task.length ; i++) { %>
+       <div class="bulletPoint">
+        <li> <input type="checkbox" name = "check"><%= task[i] %>  </li>  
+       <form action="/removeTask" method="POST"><button type="submit" name="delete" value = '<%= task[i] %>'>   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+      </svg></button></form>
+      </div>
+    
+    <% } %>    
+    <% } %>
+</div>
+</div>
+</div> 
+
+
+
+</body>
+</html>
