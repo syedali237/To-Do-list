@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // mongoose initiate
-mongoose.connect("mongodb://localhost:27017/todolistDB")
+// mongoose.connect("mongodb://localhost:27017/todolistDB")
+mongoose.connect("mongodb+srv://admin-syedaliulhasan:test123@cluster0.3vea33r.mongodb.net/todolistDB")
 .then(() => console.log('Connected!'));
 
 const itemSchema = new mongoose.Schema({
